@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<div class="event">
+    <h2 class="event-title">{{ page.title }}</h2>
+    {%- if page.location -%}
+    <p class="event-location">{{ page.location }}</p>
+    {%- endif -%}
+    {%- if page.start -%}
+    <p class="event-start">
+        <label>Start:</label> {{ page.start }}
+    </p>
+    {%- if page.end -%}
+    <p class="event-end">
+        <label>End:</label> {{ page.end }}
+    </p>
+    {%- endif -%}
+    {%- endif -%}
+
+    {%- if page.content -%}
+    <h3>Details</h3>
+    <div class="event-content">
+        {{ page.content }}
+    </div>
+    {%- endif -%}
+
+    {%- if page.info -%}
+    <a href="{{ page.info }}" target="_blank">Event details</a>
+    {%- endif -%}
+
+    {%- if page.location -%}
+    <div class="event-location-map">
+        <h3>Map</h3>
+        <iframe width="600" height="400" style="border:0" loading="lazy" allowfullscreen
+            src="https://www.google.com/maps/embed/v1/place?zoom=10&q={{ page.location }}&key=AIzaSyDwJXeE7a7dJhGANHh-BujhGanxghGFB_M"></iframe>
+    </div>
+    {%- endif -%}
+</div>

@@ -29,7 +29,7 @@ twitter_username: izaacj
 github_username:  izaacj
 
 # Build settings
-remote_theme: pages-themes/hacker@v0.2.0
+remote_theme: jekyll/minima
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
@@ -41,11 +41,9 @@ collections:
   projects:
     output: true
 
-# Hacker Theme settings
-show_downloads: false
-
-# Custom Hacker Theme settings
-show_githublink: false
+minima:
+  skin: dark
+  date_format: "%b %-d, %Y - %H:%M"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -67,3 +65,4 @@ exclude:
    - vendor/gems/
    - vendor/ruby/
    - ---_posts/
+   - -odl-/
