@@ -11,12 +11,12 @@ sections:
   label: Posts
   create: all
 - type: directory
-  path: _projects
+  path: mycontent/_projects
   label: Projects
   create: all
   match: "**/*"
 - type: directory
-  path: _events
+  path: mycontent/_events
   label: Events
   create: all
   match: "**/*"
