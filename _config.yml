@@ -42,7 +42,7 @@ collections:
     output: true
 
 #show_excerpts: true
-excerpt_separator: \n\n
+#excerpt_separator: \n\n
 
 minima:
   skin: dark
