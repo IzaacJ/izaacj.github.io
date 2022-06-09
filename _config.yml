@@ -41,6 +41,9 @@ collections:
   projects:
     output: true
 
+#show_excerpts: true
+excerpt_separator: \n\n
+
 minima:
   skin: dark
   date_format: "%b %-d, %Y - %H:%M"
@@ -74,5 +77,3 @@ exclude:
    - vendor/cache/
    - vendor/gems/
    - vendor/ruby/
-   - ---_posts/
-   - -odl-/

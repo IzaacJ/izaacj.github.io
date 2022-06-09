@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-
+<h2>Upcoming event</h2>
 <div class="event-list">
   {% assign events = site.events | sort: "start" | limit: 1 %}
   {% for event in events %}
@@ -12,6 +12,7 @@ layout: default
   {%- endfor -%}
 </div>
 <div style="clear:both; margin-bottom: 30px;"></div>
+<h2>Latest Posts</h2>
 <div class="mypost-list">
   {% assign posts = site.posts | limit: 5 %}
   {% for post in posts %}
