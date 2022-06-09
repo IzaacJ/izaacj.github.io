@@ -1,8 +1,5 @@
 ---
 title: Events
-layout: page
+layout: events
 permalink: /events/
 ---
-{% for event in site.events %}
-### [{{ event.start }}: {{ event.title }}]({{ event.url }})
-{% endfor %}

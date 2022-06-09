@@ -1,20 +1,21 @@
-.event {
-    &-title {
-        margin-bottom: 0px;
-    }
-    &-start {
+@import "minima/flexbox.scss";
+@import "minima/event.scss";
+@import "minima/project.scss";
+@import "minima/post.scss";
 
-    }
-    &-end {
+.flex-break {
+  flex-basis: 100%;
+  height: 0;
+}
 
-    }
-    &-content {
+footer.site-footer {
+  padding: 15px 0 0 0;
 
+  & .wrapper {
+    & .footer-col-wrapper {
+      & .footer-col {
+        margin-bottom: 0;
+      }
     }
-    &-location {
-        &-map {
-
-        }
-    }
-
+  }
 }

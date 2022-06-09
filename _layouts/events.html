@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<div class="event-list">
+  {%- assign events_sorted = site.events | sort: "start" -%}
+  {%- for event in events_sorted -%}
+  {%- include event-list-item.html event=event -%}
+  {%- if forloop.last == false -%}
+  <hr>
+  {%- endif -%}
+  {% endfor %}
+</div>

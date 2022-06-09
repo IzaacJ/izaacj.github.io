@@ -1,0 +1,26 @@
+<div class="mypost-list-item">
+  {%- if include.post.date -%}
+  <div class="mypost-list-item-date">
+    <div class="back">
+      <div class="year">
+        {{ include.post.date | date: "%Y" }}
+      </div>
+      <div class="date">
+        {{ include.post.date | date: "%d" }}
+      </div>
+      <div class="month">
+        {{ include.post.date | date: "%b" }}
+      </div>
+    </div>
+  </div>
+  {%- endif -%}
+  <div class="mypost-list-item-info">
+    <a href="{{ include.post.url }}">
+      <h2>{{ include.post.title }}</h2>
+    </a>
+    <h4>Post excerpt here...</h4>
+    {%- if include.event.end -%}
+    <h4>Updated {{ include.post.modified | date: "%b %d, %Y" }}</h4>
+    {%- endif -%}
+  </div>
+</div>

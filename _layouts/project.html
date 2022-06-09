@@ -1,0 +1,62 @@
+---
+layout: default
+---
+<div class="project">
+  {%- if page.featured -%}
+  <div class="project-featured" style="background-image: url({{ page.featured }});"></div>
+  {%- endif -%}
+
+  <h2 class="project-title">{{ page.title }}</h2>
+
+  <div class="project-details">
+    {%- if page.status -%}
+    {%- for status in page.status -%}
+    <div class="project-details-status">
+      <label>{{ status.label | default: "Status" }}: </label> {{ status.date | default: status }}
+    </div>
+    {%- endfor -%}
+    {%- endif -%}
+    {%- if page.started -%}
+    <div class="project-details-status">
+      <label>Started</label>: {{ page.started }}
+    </div>
+    {%- endif -%}
+    {%- if page.released -%}
+    <div class="project-details-status">
+      <label>Released</label>: {{ page.released }}
+    </div>
+    {%- endif -%}
+    {%- if page.ended -%}
+    <div class="project-details-status">
+      <label>Ended</label>: {{ page.ended }}
+    </div>
+    {%- endif -%}
+    <div class="flex-break"></div>
+    {%- if page.urls -%}
+    {%- for u in page.urls -%}
+    <div class="project-details-url">
+      <a href="{{ u.url | default: u }}" target="_blank">
+        <label>{{ u.label | default: "view more" }}</label>
+      </a>
+    </div>
+    {%- endfor -%}
+    {%- endif -%}
+  </div>
+
+  {%- if page.start -%}
+  <p class="project-start">
+    <label>Started:</label> {{ page.start }}
+  </p>
+  {%- endif -%}
+  {%- if page.end -%}
+  <p class="project-end">
+    <label>Ended:</label> {{ page.end }}
+  </p>
+  {%- endif -%}
+
+  {%- if page.content -%}
+  <div class="project-content">
+    {{ page.content }}
+  </div>
+  {%- endif -%}
+</div>

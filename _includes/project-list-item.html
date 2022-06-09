@@ -1,0 +1,22 @@
+<div class="project-list-item">
+  <div class="project-list-item-info">
+    <a href="{{ include.post.url }}">
+      <h2>{{ include.post.title }}</h2>
+    </a>
+    {%- if include.post.categories -%}
+    <div class="project-list-item-category flex-container">
+      {% for cat in include.post.categories %}
+      <div class="category">
+        {{ cat }}
+      </div>
+      {% endfor %}
+    </div>
+    {%- endif -%}
+    {% if include.post.description %}
+    <p>{{ include.post.description }}</p>
+    {% endif %}
+    {%- if include.post.modified -%}
+    <h4>Updated {{ include.post.modified | date: "%b %d, %Y" }}</h4>
+    {%- endif -%}
+  </div>
+</div>

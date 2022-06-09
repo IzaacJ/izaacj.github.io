@@ -1,0 +1,26 @@
+<div class="event-list-item">
+  {%- if include.event.start -%}
+  <div class="event-list-item-date">
+    <div class="back">
+      <div class="year">
+        {{ include.event.start | date: "%Y" }}
+      </div>
+      <div class="date">
+        {{ include.event.start | date: "%d" }}
+      </div>
+      <div class="month">
+        {{ include.event.start | date: "%b" }}
+      </div>
+    </div>
+  </div>
+  {%- endif -%}
+  <div class="event-list-item-info">
+    <a href="{{ include.event.url }}">
+      <h2>{{ include.event.title }}</h2>
+    </a>
+    <h4>{{ include.event.location }}</h4>
+    {%- if include.event.end -%}
+    <h4>Lasts until {{ include.event.end | date: "%b %d, %Y" }}</h4>
+    {%- endif -%}
+  </div>
+</div>

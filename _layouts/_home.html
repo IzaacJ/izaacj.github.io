@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="event-list">
+  {% assign events = site.events | sort: "start" | limit: 1 %}
+  {% for event in events %}
+  {%- include event-list-item.html event=event -%}
+  {%- if forloop.last == false -%}
+  <hr>
+  {%- endif -%}
+  {%- endfor -%}
+</div>
+<div style="clear:both; margin-bottom: 30px;"></div>
+<div class="mypost-list">
+  {% assign posts = site.posts | limit: 5 %}
+  {% for post in posts %}
+  {%- include post-list-item.html post=post -%}
+  {%- if forloop.last == false -%}
+  <hr>
+  {%- endif -%}
+  {%- endfor -%}
+</div>

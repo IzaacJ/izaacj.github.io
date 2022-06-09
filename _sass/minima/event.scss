@@ -1,0 +1,124 @@
+.event {
+  &-list {
+    &-item {
+      width: 100%;
+      padding-left: 15px;
+
+      h2 {
+        margin-bottom: 0;
+        margin-top: -7px;
+      }
+
+      h4 {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      &-info {
+        display: inline-block;
+      }
+
+      &-date {
+        display: inline-block;
+        float: left;
+        margin-right: 15px;
+
+        & .back {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-content: stretch;
+          align-items: stretch;
+          width: 60px;
+          height: 70px;
+          border: 1px solid #000000;
+          border-radius: 15px;
+          background-color: #ffffff;
+        }
+
+        & .year {
+          flex: 0 0 auto;
+          align-self: stretch;
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+          background-color: #ff0000;
+          color: #ffffff;
+          text-align: center;
+          font-size: 75%;
+        }
+
+        & .date {
+          display: flex;
+          flex: 1 1 auto;
+          align-self: auto;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          font-size: 150%;
+          font-weight: bolder;
+          color: #000000;
+          text-decoration: none;
+        }
+
+        & .month {
+          flex: 0 1 auto;
+          align-self: stretch;
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 75%;
+          font-weight: 600;
+          color: #000000;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &-title {
+    margin-bottom: 0px;
+  }
+
+  &-start,
+  &-end {
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    label {
+      font-weight: bolder;
+    }
+  }
+
+  &-content {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  &-details {
+    float: right;
+    margin-top: -20px;
+
+    a,
+    a:active,
+    a:visited,
+    a:hover {
+      color: $link-base-color;
+      border: 1px solid $link-base-color;
+      border-radius: 5px;
+      padding: 10px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+
+  &-location {
+    font-style: italic;
+
+    &-map {
+      text-align: center;
+
+      h3 {
+        text-align: left;
+      }
+    }
+  }
+}

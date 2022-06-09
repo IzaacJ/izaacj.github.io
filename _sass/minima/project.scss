@@ -1,0 +1,91 @@
+.project {
+  &-list {
+    &-item {
+      width: 100%;
+      padding-left: 15px;
+
+      h2 {
+        margin-bottom: 0;
+        margin-top: -7px;
+      }
+
+      h4 {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      &-info {
+        display: inline-block;
+
+        a {
+          display: inline-block;
+        }
+      }
+
+      &-category {
+        float: right;
+        display: inline-flex;
+        margin-left: 15px;
+        width: auto;
+        font-size: 75%;
+        padding: 0;
+        border: none;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: flex-start;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        & .category {
+          flex: 0 0 auto;
+          text-transform: uppercase;
+          border: 1px solid #7c7c7c;
+          border-radius: 5px;
+          background: #48485f;
+          padding: 0 3px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  &-featured {
+    height: 150px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-title {
+
+    &.canceled,
+    &.discontinued {
+      color: red;
+      text-decoration: line-through;
+    }
+  }
+
+  &-details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    justify-items: stretch;
+
+    &-status,
+    &-url {
+      label {
+        text-transform: capitalize;
+        font-weight: bolder;
+      }
+    }
+  }
+
+  &-content {
+    margin: 15px auto;
+  }
+}

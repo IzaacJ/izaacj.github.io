@@ -1,0 +1,23 @@
+.flex-container {
+  display: flex;
+  width: 90%;
+  padding: 15px;
+  border: 1px solid #ffffff;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-evenly;
+  justify-items: center;
+  flex-direction: row;
+  align-items: center;
+
+  &-item {
+    width: auto;
+    height: auto;
+    flex-grow: 0;
+    padding: 5px;
+    border: 1px solid #ffffff;
+    align-self: center;
+    justify-self: center;
+    text-transform: capitalize;
+  }
+}
