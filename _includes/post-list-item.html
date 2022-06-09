@@ -19,8 +19,5 @@
       <h2>{{ include.post.title }}</h2>
     </a>
     <h4>{{ include.post.excerpt | strip_html }}</h4>
-    {%- if include.event.end -%}
-    <h4>Updated {{ include.post.modified | date: "%b %d, %Y" }}</h4>
-    {%- endif -%}
   </div>
 </div>
