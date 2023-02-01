@@ -15,6 +15,7 @@ What has happened since then?
 * Deemed my car to expensive to repair, estimated to 40.000+ SEK, on November 21, 2022
 * Started my current assignment at a Swedish government agency on December 14, 2022
 * Started moving to a townhouse on December 30, 2022
+* Rocked on together with Alestorm, Rumahoy, Wind Rose and Gloryhammer in Stockholm on January 20, 2023
 * Celebrated my wifes 30th birthday on January 21, 2023
 
 From now on, I'll try to post somewhat recently, at least if I have something useful to post ;)

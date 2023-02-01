@@ -3,11 +3,58 @@ layout: default
 ---
 
 <div class="event-list">
-  {%- assign events_sorted = site.events | sort: "start" -%}
+  {% assign events_sorted = site.events | sort: "start" | reverse %}
+
+  <h3>Future Events</h3>
   {%- for event in events_sorted -%}
-  {%- include event-list-item.html event=event -%}
-  {%- if forloop.last == false -%}
-  <hr>
-  {%- endif -%}
+  <div future-date="{{ event.start | date: '%Y%m%d' }}" hidden="true">
+    {%- include event-list-item.html event=event -%}
+  </div>
+  {%- else -%}
+  <h3>No events planned...</h3>
   {% endfor %}
+
+  <hr>
+  <h3>Past Events</h3>
+  {%- for event in events_sorted -%}
+  <div past-date="{{ event.start | date: '%Y%m%d' }}" hidden="true">
+    {%- include event-list-item.html event=event -%}
+  </div>
+  {%- else -%} <h3>No past
+    events...</h3>
+  {% endfor %}
+
+  <script type="text/javascript">
+    function getCompareDate() {
+      var d = new Date(),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+      if (month.length < 2) month = '0' + month;
+      if (day.length < 2) day = '0' + day;
+      return [year, month, day].join('');
+    }
+
+    function hide(item) {
+      item.setAttribute("hidden", true);
+    }
+
+    function show(item) {
+      item.removeAttribute("hidden");
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const thisDate = getCompareDate();
+      var futureEvents = Array.from(document.querySelectorAll('[future-date]')).filter(item => item.getAttribute("future-date") >= thisDate);
+      var pastEvents = Array.from(document.querySelectorAll('[past-date]')).filter(item => item.getAttribute("past-date") < thisDate);
+
+      futureEvents.forEach((item, index) => {
+        show(item);
+      });
+
+      pastEvents.forEach((item, index) => {
+        show(item);
+      });
+    }, false);
+  </script>
 </div>

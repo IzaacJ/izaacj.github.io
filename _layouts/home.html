@@ -1,17 +1,57 @@
 ---
 layout: default
 ---
-<h2>Upcoming event</h2>
+{% if site.events.size > 0 %}
+<h2>Next event</h2>
 <div class="event-list">
-  {% assign events = site.events | sort: "start" | limit: 1 %}
+  {% assign events = site.events | sort: "start" %}
   {% for event in events %}
-  {%- include event-list-item.html event=event -%}
-  {%- if forloop.last == false -%}
-  <hr>
-  {%- endif -%}
+  <div event-date="{{ event.start | date: '%Y%m%d' }}" hidden="true">
+    {%- include event-list-item.html event=event -%}
+  </div>
+  {%- else -%}
+  <h3>No events planned...</h3>
   {%- endfor -%}
 </div>
+
+<script type="text/javascript">
+  function getCompareDate() {
+    var d = new Date(),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+    return [year, month, day].join('');
+  }
+
+  function hide(item) {
+    item.setAttribute("hidden", true);
+  }
+
+  function show(item) {
+    item.removeAttribute("hidden");
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var allEvents = Array.from(document.querySelectorAll('[event-date]'));
+    allEvents.sort((a, b) => {
+      return Date.parse(b.getAttribute("event-date")) - Date.parse(a.getAttribute("event-date"));
+    });
+    const thisDate = getCompareDate();
+    const filteredEvents = allEvents.filter(item => item.getAttribute("event-date") >= thisDate);
+    if (filteredEvents.length > 0) {
+      show(filteredEvents[0]);
+    } else {
+      var noEvents = document.createElement("h3");
+      noEvents.innerHTML = "No upcoming event...";
+      document.querySelectorAll("div.event-list").item(0).appendChild(noEvents);
+    }
+  }, false);
+</script>
 <div style="clear:both; margin-bottom: 30px;"></div>
+{% endif %}
+
 <h2>Latest Posts</h2>
 <div class="mypost-list">
   {% assign posts = site.posts | limit: 5 %}

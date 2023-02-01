@@ -33,6 +33,7 @@ remote_theme: jekyll/minima
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
+  - to_time
 
 collections_dir: mycontent
 collections:
@@ -41,17 +42,15 @@ collections:
   projects:
     output: true
 
-#show_excerpts: true
+show_excerpts: true
 #excerpt_separator: \n\n
 
 minima:
   skin: dark
   date_format: "%b %-d, %Y - %H:%M"
   social_links:
-    twitter: izaacj
-    github: izaacj
-    facebook: izaacbrann
-    linkedin: izaacbrann
+    - { platform: github, user_url: "https://github.com/IzaacJ" }
+    - { platform: twitter, user_url: "https://twitter.com/izaacj" }
 
 header_pages:
   - about.md
